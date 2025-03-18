@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Base colors -->
     <color name="green_500">#4CAF50</color>
     <color name="green_700">#388E3C</color>
     <color name="teal_200">#80CBC4</color>
     <color name="teal_700">#00796B</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Theme colors -->
+    <color name="background">#F5F5F5</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+
+    <!-- Card background colors -->
+    <color name="scan_card_bg">#4CAF50</color>
+    <color name="history_card_bg">#FF9800</color>
+    <color name="help_card_bg">#2196F3</color>
+    <color name="settings_card_bg">#9C27B0</color>
 </resources>
