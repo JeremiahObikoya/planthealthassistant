@@ -36,6 +36,14 @@
         <activity
             android:name=".SettingsActivity"
             android:exported="false"/>
+        <activity
+            android:name=".HistoryActivity"
+            android:exported="false"
+            android:label="@string/scan_history"/>
+        <activity
+            android:name=".HelpActivity"
+            android:exported="false"
+            android:label="@string/help_title"/>
     </application>
 
 </manifest>

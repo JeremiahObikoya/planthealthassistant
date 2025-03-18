@@ -12,6 +12,25 @@
     <string name="notifications">Notifications</string>
     <string name="enable_notifications">Enable Notifications</string>
 
+    <!-- History Screen -->
+    <string name="scan_history">Scan History</string>
+    <string name="no_history">No scan history available</string>
+    <string name="delete_history">Delete History</string>
+    <string name="delete_all_title">Delete All History</string>
+    <string name="delete_all_message">Are you sure you want to delete all scan history? This action cannot be undone.</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Help Screen -->
+    <string name="help_title">How to Use Plant Health Assist</string>
+    <string name="help_getting_started">Getting Started</string>
+    <string name="help_getting_started_content">Welcome to Plant Health Assist! This app helps you identify plant diseases by analyzing photos of affected plants. To begin, simply tap the \"Scan Plant\" button on the home screen.</string>
+    <string name="help_scanning">Taking a Good Photo</string>
+    <string name="help_scanning_content">For best results:\n\n• Ensure good lighting\n• Focus on the affected area\n• Keep the camera steady\n• Take photos from 20-30cm away\n• Include both healthy and affected parts if possible</string>
+    <string name="help_history">Managing Scan History</string>
+    <string name="help_history_content">All your previous scans are saved locally on your device. You can access them anytime from the History screen. Each entry shows the plant photo, detected disease, and scan date. Tap any entry to view full details.</string>
+    <string name="help">Help</string>
+
     <string-array name="languages">
         <item>English</item>
         <item>Spanish</item>

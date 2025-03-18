@@ -2,9 +2,7 @@ package com.example.planthealthassist
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.planthealthassist.databinding.ActivityHomeBinding
 
 class HomeActivity : BaseActivity() {
@@ -21,19 +19,29 @@ class HomeActivity : BaseActivity() {
     }
 
     private fun setupButtons() {
-        binding.cameraButton.setOnClickListener {
-            startActivity(Intent(this, CameraActivity::class.java))
-        }
+        binding.apply {
+            cameraButton.setOnClickListener {
+                startActivity(Intent(this@HomeActivity, CameraActivity::class.java))
+            }
 
-        binding.settingsButton.setOnClickListener {
-            startActivity(Intent(this, SettingsActivity::class.java))
+            historyButton.setOnClickListener {
+                startActivity(Intent(this@HomeActivity, HistoryActivity::class.java))
+            }
+
+            helpButton.setOnClickListener {
+                startActivity(Intent(this@HomeActivity, HelpActivity::class.java))
+            }
+
+            settingsButton.setOnClickListener {
+                startActivity(Intent(this@HomeActivity, SettingsActivity::class.java))
+            }
         }
     }
 
     private fun setupRecyclerView() {
         binding.recentScans.apply {
             layoutManager = LinearLayoutManager(this@HomeActivity)
-            // TODO: Add adapter implementation
+            // TODO: Add adapter implementation for recent scans
         }
     }
 } 
