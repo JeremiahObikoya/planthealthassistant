@@ -87,6 +87,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="2dp"
                 app:cardBackgroundColor="@color/settings_card_bg">
@@ -100,19 +101,44 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/notifications"
+                        android:text="@string/notification_settings"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="8dp"/>
 
-                    <com.google.android.material.switchmaterial.SwitchMaterial
-                        android:id="@+id/notificationSwitch"
+                    <RadioGroup
+                        android:id="@+id/notificationFrequencyGroup"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/enable_notifications"
-                        android:textColor="@color/white"/>
+                        android:layout_height="wrap_content">
 
+                        <RadioButton
+                            android:id="@+id/radioDaily"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/daily_reminders"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:padding="8dp" />
+
+                        <RadioButton
+                            android:id="@+id/radioWeekly"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/weekly_reminders"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:padding="8dp" />
+
+                        <RadioButton
+                            android:id="@+id/radioOff"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/notifications_off"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:padding="8dp" />
+                    </RadioGroup>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

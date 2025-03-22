@@ -30,6 +30,32 @@
     <string name="help_history">Managing Scan History</string>
     <string name="help_history_content">All your previous scans are saved locally on your device. You can access them anytime from the History screen. Each entry shows the plant photo, detected disease, and scan date. Tap any entry to view full details.</string>
     <string name="help">Help</string>
+    
+    <!-- Scan Results Screen -->
+    <string name="scan_result">Scan Result</string>
+    <string name="disease_result">Plant Type: %1$s\nDisease: %2$s</string>
+    <string name="confidence_result">Confidence: %1$d%%</string>
+    <string name="error_analyzing_image">Could not analyze image. Please try again.</string>
+    <string name="share_results">Share Results</string>
+    <string name="analyzing_plant">Analyzing plant…</string>
+    <string name="recommendations">Recommendations</string>
+    
+    <!-- Recommendations -->
+    <string name="healthy_recommendations">Your plant appears to be healthy! Continue with regular care practices including appropriate watering, sunlight, and nutrition.</string>
+    <string name="blight_recommendations">Blight infection detected. Recommendations:\n\n• Remove and destroy infected plant parts\n• Ensure good air circulation\n• Apply appropriate fungicide\n• Water at soil level to avoid wetting leaves\n• Rotate crops in future plantings</string>
+    <string name="rust_recommendations">Rust disease detected. Recommendations:\n\n• Remove and destroy infected leaves\n• Apply fungicides specifically labeled for rust\n• Improve air circulation around plants\n• Avoid overhead watering\n• Practice crop rotation</string>
+    <string name="mildew_recommendations">Powdery mildew detected. Recommendations:\n\n• Improve air circulation\n• Apply fungicide treatments\n• Remove severely infected leaves\n• Water in the morning so leaves can dry\n• Use resistant varieties in future plantings</string>
+    <string name="virus_recommendations">Viral infection detected. Recommendations:\n\n• Unfortunately, there is no cure for viral plant diseases\n• Remove and destroy infected plants\n• Control insects that may spread the virus\n• Disinfect gardening tools\n• Plant resistant varieties in the future</string>
+    <string name="bacterial_recommendations">Bacterial infection detected. Recommendations:\n\n• Remove and destroy infected plant parts\n• Apply copper-based bactericides\n• Improve air circulation\n• Avoid overhead watering\n• Practice good garden sanitation</string>
+    <string name="general_recommendations">General recommendations for plant health:\n\n• Remove affected plant parts\n• Improve air circulation\n• Avoid overhead watering\n• Consider appropriate fungicide or pesticide treatment\n• Practice crop rotation and good sanitation</string>
+
+    <!-- Notification Settings -->
+    <string name="notification_settings">Notification Settings</string>
+    <string name="daily_reminders">Daily Reminders</string>
+    <string name="weekly_reminders">Weekly Reminders</string>
+    <string name="notifications_off">Turn Off Reminders</string>
+    <string name="notification_channel_name">Plant Health Reminders</string>
+    <string name="notification_channel_description">Reminders to check on your plant\'s health and treatment progress</string>
 
     <string-array name="languages">
         <item>English</item>

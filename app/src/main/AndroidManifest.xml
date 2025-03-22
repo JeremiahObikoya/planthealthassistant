@@ -3,9 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-feature android:name="android.hardware.camera" android:required="true"/>
 
     <application
+        android:name=".PlantHealthApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,6 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PlantHealthAssist"
         tools:targetApi="31">
+
+        <!-- Disable default WorkManager initialization -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            tools:node="remove" />
+
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -32,7 +41,8 @@
             android:exported="false"/>
         <activity
             android:name=".ResultActivity"
-            android:exported="false"/>
+            android:exported="false"
+            android:theme="@style/Theme.PlantHealthAssist.NoActionBar"/>
         <activity
             android:name=".SettingsActivity"
             android:exported="false"/>

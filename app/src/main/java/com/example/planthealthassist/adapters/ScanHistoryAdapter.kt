@@ -35,7 +35,7 @@ class ScanHistoryAdapter(
 
         init {
             itemView.setOnClickListener {
-                val position = bindingAdapterPosition
+                val position = layoutPosition
                 if (position != RecyclerView.NO_POSITION) {
                     onItemClick(getItem(position))
                 }

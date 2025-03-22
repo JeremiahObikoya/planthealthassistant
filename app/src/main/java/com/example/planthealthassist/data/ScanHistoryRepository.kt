@@ -41,6 +41,22 @@ class ScanHistoryRepository(private val scanHistoryDao: ScanHistoryDao) {
         scanHistoryDao.deleteAll()
     }
 
+    suspend fun insertScanHistory(
+        plantType: String,
+        diseaseName: String,
+        confidence: Float,
+        imagePath: String,
+        timestamp: Long
+    ) {
+        val scan = ScanHistoryEntity(
+            imageUri = imagePath,
+            diseaseName = "$plantType - $diseaseName",
+            solution = "Confidence: ${(confidence * 100).toInt()}%",
+            scanDate = Date(timestamp)
+        )
+        scanHistoryDao.insert(scan)
+    }
+
     private fun ScanHistoryEntity.toScanHistoryItem(): ScanHistoryItem {
         return ScanHistoryItem(
             id = id,

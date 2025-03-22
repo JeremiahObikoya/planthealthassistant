@@ -49,7 +49,7 @@ class HistoryActivity : BaseActivity() {
     private fun setupRecyclerView() {
         adapter = ScanHistoryAdapter { historyItem ->
             val intent = Intent(this, ResultActivity::class.java).apply {
-                putExtra("scan_id", historyItem.id)
+                putExtra(ResultActivity.EXTRA_IMAGE_PATH, historyItem.imageUri.path)
             }
             startActivity(intent)
         }
