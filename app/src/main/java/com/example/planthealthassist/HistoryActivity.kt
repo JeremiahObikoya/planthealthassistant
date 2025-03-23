@@ -49,7 +49,8 @@ class HistoryActivity : BaseActivity() {
     private fun setupRecyclerView() {
         adapter = ScanHistoryAdapter { historyItem ->
             val intent = Intent(this, ResultActivity::class.java).apply {
-                putExtra(ResultActivity.EXTRA_IMAGE_PATH, historyItem.imageUri.path)
+                putExtra(ResultActivity.EXTRA_IMAGE_PATH, historyItem.imageUri.toString())
+                putExtra(ResultActivity.EXTRA_FROM_HISTORY, true)
             }
             startActivity(intent)
         }
@@ -64,13 +65,16 @@ class HistoryActivity : BaseActivity() {
         lifecycleScope.launch {
             viewModel.isLoading.collect { isLoading ->
                 binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+                binding.historyRecyclerView.visibility = if (isLoading) View.GONE else View.VISIBLE
             }
         }
 
         lifecycleScope.launch {
             viewModel.scans.collect { scans ->
                 adapter.submitList(scans)
-                showEmptyState(scans.isEmpty())
+                if (!viewModel.isLoading.value) {
+                    showEmptyState(scans.isEmpty())
+                }
             }
         }
 

@@ -57,11 +57,11 @@
 
             <ProgressBar
                 android:id="@+id/progressBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:visibility="gone"
-                android:indeterminateTint="@color/history_card_bg"/>
+                android:indeterminateTint="@android:color/holo_orange_light"/>
 
         </FrameLayout>
     </androidx.core.widget.NestedScrollView>

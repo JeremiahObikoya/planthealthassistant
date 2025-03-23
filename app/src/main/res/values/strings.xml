@@ -56,12 +56,4 @@
     <string name="notifications_off">Turn Off Reminders</string>
     <string name="notification_channel_name">Plant Health Reminders</string>
     <string name="notification_channel_description">Reminders to check on your plant\'s health and treatment progress</string>
-
-    <string-array name="languages">
-        <item>English</item>
-        <item>Spanish</item>
-        <item>French</item>
-        <item>German</item>
-        <item>Chinese</item>
-    </string-array>
 </resources>

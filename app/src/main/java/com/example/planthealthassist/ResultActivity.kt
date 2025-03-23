@@ -29,6 +29,7 @@ class ResultActivity : AppCompatActivity() {
     private lateinit var diseaseDetector: DiseaseDetector
     private lateinit var scanHistoryRepository: ScanHistoryRepository
     private lateinit var imagePath: String
+    private var isFromHistory: Boolean = false
     
     private lateinit var progressBar: ProgressBar
     private lateinit var errorText: TextView
@@ -61,11 +62,12 @@ class ResultActivity : AppCompatActivity() {
         resultCard.visibility = View.GONE
 
         try {
-            // Get image path from intent
+            // Get image path and source from intent
             imagePath = intent.getStringExtra(EXTRA_IMAGE_PATH) ?: run {
                 showError("No image path provided")
                 return
             }
+            isFromHistory = intent.getBooleanExtra(EXTRA_FROM_HISTORY, false)
 
             // Verify image exists and is readable
             if (!verifyImage()) {
@@ -232,6 +234,12 @@ class ResultActivity : AppCompatActivity() {
     }
 
     private fun saveToHistory(result: DetectionResult) {
+        // Only save to history if this is a new scan, not when viewing history
+        if (isFromHistory) {
+            Log.d(TAG, "Skipping history save - viewing existing scan")
+            return
+        }
+
         lifecycleScope.launch {
             try {
                 scanHistoryRepository.insertScanHistory(
@@ -290,5 +298,6 @@ class ResultActivity : AppCompatActivity() {
     companion object {
         private const val TAG = "ResultActivity"
         const val EXTRA_IMAGE_PATH = "com.example.planthealthassist.EXTRA_IMAGE_PATH"
+        const val EXTRA_FROM_HISTORY = "com.example.planthealthassist.EXTRA_FROM_HISTORY"
     }
 } 

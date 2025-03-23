@@ -30,24 +30,29 @@ class HistoryViewModel(application: Application) : AndroidViewModel(application)
 
     private fun loadScans() {
         viewModelScope.launch {
-            repository.getAllScans()
-                .catch { e ->
-                    _error.value = e.message
-                    _isLoading.value = false
-                }
-                .collect { scanList ->
-                    _scans.value = scanList
-                    _isLoading.value = false
-                }
+            try {
+                _isLoading.value = true
+                repository.getAllScans()
+                    .collect { scanList ->
+                        _scans.value = scanList
+                        _isLoading.value = false
+                    }
+            } catch (e: Exception) {
+                _error.value = e.message
+                _isLoading.value = false
+            }
         }
     }
 
     fun deleteScan(scan: ScanHistoryItem) {
         viewModelScope.launch {
             try {
+                _isLoading.value = true
                 repository.deleteScan(scan)
+                _isLoading.value = false
             } catch (e: Exception) {
                 _error.value = e.message
+                _isLoading.value = false
             }
         }
     }
@@ -55,9 +60,12 @@ class HistoryViewModel(application: Application) : AndroidViewModel(application)
     fun deleteAllScans() {
         viewModelScope.launch {
             try {
+                _isLoading.value = true
                 repository.deleteAllScans()
+                _isLoading.value = false
             } catch (e: Exception) {
                 _error.value = e.message
+                _isLoading.value = false
             }
         }
     }

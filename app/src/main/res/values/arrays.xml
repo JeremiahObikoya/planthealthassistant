@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="languages">
+        <item>English</item>
+        <item>Yoruba</item>
+        <item>Igbo</item>
+        <item>Hausa</item>
+    </string-array>
+    
+    <string-array name="language_values">
+        <item>en</item>
+        <item>yo</item>
+        <item>ig</item>
+        <item>ha</item>
+    </string-array>
+</resources> 

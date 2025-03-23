@@ -46,7 +46,7 @@ class NotificationManager(private val context: Context) {
 
         workManager.enqueueUniquePeriodicWork(
             WORK_NAME,
-            ExistingPeriodicWorkPolicy.REPLACE,
+            ExistingPeriodicWorkPolicy.UPDATE,
             periodicWorkRequest
         )
     }

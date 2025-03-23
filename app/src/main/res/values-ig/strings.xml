@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Plant Health Assistant</string>
+    <string name="scan_plant">Nyochaa Osisi</string>
+    <string name="scan_history">Akụkọ Nnyocha</string>
+    <string name="settings">Ntọala</string>
+    <string name="help">Enyemaka</string>
+    <!-- Add more strings -->
+</resources> 
